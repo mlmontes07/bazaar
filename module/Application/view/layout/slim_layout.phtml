@@ -1,0 +1,60 @@
+<?php
+/**
+ * @var Laminas\View\Renderer\PhpRenderer $this
+ */
+?>
+<?= $this->doctype() ?>
+<html class="loading" lang="en" data-textdirection="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta charset="utf-8">
+    
+    <?= $this->headTitle('Laminas MVC Skeleton')->setSeparator(' - ')->setAutoEscape(false) ?>
+    
+    <link rel="apple-touch-icon" href="/assets/images/ico/apple-icon-120.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CQuicksand:300,400,500,700" rel="stylesheet">
+	
+	<?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->serverUrl() . '/assets/images/ico/favicon.ico'])
+    	->appendStylesheet($this->serverUrl('/assets/line-awesome/css/line-awesome.min.css'))
+    	->appendStylesheet($this->serverUrl('/assets/vendors/css/vendors.min.css'))
+    	->appendStylesheet($this->serverUrl('/assets/vendors/css/forms/icheck/icheck.css'))
+    	->appendStylesheet($this->serverUrl('/assets/vendors/css/forms/icheck/custom.css'))
+    	->appendStylesheet($this->serverUrl('/assets/css/bootstrap.min.css'))
+    	->appendStylesheet($this->serverUrl('/assets/css/bootstrap-extended.min.css'))
+    	->appendStylesheet($this->serverUrl('/assets/css/colors.min.css'))
+    	->appendStylesheet($this->serverUrl('/assets/css/components.min.css'))
+    	->appendStylesheet($this->serverUrl('/assets/css/core/menu/menu-types/vertical-menu-modern.css'))
+    	->appendStylesheet($this->serverUrl('/assets/css/core/colors/palette-gradient.min.css'))
+    	->appendStylesheet($this->serverUrl('/assets/css/pages/login-register.min.css'))
+    	->appendStylesheet($this->serverUrl('/assets/css/style.css'))
+    ?>
+    
+    <?= $this->headScript()->prependFile($this->serverUrl('/assets/vendors/js/jquery.min.js')) ?>
+
+  </head>
+  
+  <body class="vertical-layout vertical-menu-modern 1-column bg-full-screen-image blank-page" data-open="click" data-menu="vertical-menu-modern" data-col="1-column">
+  
+	<div class="app-content content">
+      <div class="content-overlay"></div>
+      <div class="content-wrapper">
+        <div class="content-body">
+		  <?= $this->content ?>
+        </div>
+      </div>
+    </div>
+    
+	<?= $this->inlineScript()
+    	->prependFile($this->serverUrl('/assets/vendors/js/forms/validation/jqBootstrapValidation.js'))
+    	->prependFile($this->serverUrl('/assets/vendors/js/forms/icheck/icheck.min.js'))
+    	->prependFile($this->serverUrl('/assets/js/core/app-menu.min.js'))
+    	->prependFile($this->serverUrl('/assets/js/core/app.js'))
+	    ->prependFile($this->serverUrl('/assets/vendors/js/vendors.min.js'))
+	?>
+  </body>
+</html>

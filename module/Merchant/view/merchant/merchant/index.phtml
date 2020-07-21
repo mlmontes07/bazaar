@@ -1,0 +1,38 @@
+<?php
+/**
+ * @var Laminas\View\Renderer\PhpRenderer $this
+ */
+$this->headLink()
+     ->appendStylesheet($this->serverUrl('/assets/vendors/css/tables/datatable/datatables.min.css'))
+?>
+<section class="merchant-list-wrapper">
+    <div class="merchant-list-table">
+        <div class="card">
+            <div class="card-content">
+                <div class="card-body">
+                	<table id="merchantList" class="">
+						<thead>
+							<tr>
+								<th>Image</th>
+								<th>Name</th>
+								<th>Type</th>
+								<th>Address</th>
+								<th>Phone</th>
+								<th>Mobile</th>
+								<th>Delivery</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>                
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<?php 
+$this->inlineScript()
+     ->appendFile($this->serverUrl('/assets/vendors/js/tables/datatable/datatables.min.js'))
+     ->appendFile($this->serverUrl('/assets/js/scripts/pages/merchant-index.js'))
+?>

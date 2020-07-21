@@ -1,0 +1,77 @@
+<?php
+/**
+ * @var Laminas\View\Renderer\PhpRenderer $this
+ */
+// $this->headScript()->prependFile('https://www.google.com/recaptcha/api.js');
+?>
+<section class="row flexbox-container">
+  <div class="col-12 d-flex align-items-center justify-content-center">
+    <div class="col-lg-4 col-md-8 col-10 box-shadow-2 p-0">
+      <div class="card border-grey border-lighten-3 px-1 py-1 m-0">
+        <div class="card-header border-0">
+          <div class="card-title text-center">
+            <img src="/assets/images/logo/logo.png" alt="branding logo" style="width:54px;"> <span style="font-size:32px;vertical-align:middle;">MarketPlace</span>
+          </div>
+          <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2"><span>Continue Using</span></h6>
+        </div>
+        <div class="card-content">
+          <div class="text-center">
+            <a href="#" class="btn btn-social-icon mr-1 mb-1 btn-outline-facebook"><span class="la la-facebook"></span></a>
+            <a href="#" class="btn btn-social-icon mr-1 mb-1 btn-outline-google"><span class="la la-google"></span></a>
+            <a href="#" class="btn btn-social-icon mr-1 mb-1 btn-outline-linkedin"><span class="la la-linkedin font-medium-4"></span></a>
+            <a href="#" class="btn btn-social-icon mr-1 mb-1 btn-outline-github"><span class="la la-github font-medium-4"></span></a>
+          </div>
+          <p class="card-subtitle line-on-side text-muted text-center font-small-3 mx-2 my-1"><span>OR Using MarketPlace Account</span></p>
+          <div class="card-body">
+          	<?php
+            $form = $this->form;
+            $form->prepare();
+            $form->setAttribute('action', $this->serverUrl(true) . ($this->redirect ? '?redirect=' . $this->redirect : ''));
+            $form->setAttribute('id', 'sign-in-form');
+            $form->setAttribute('method', 'post');
+            $form->setAttribute('class', 'form-horizontal');
+            $form->setAttribute('autocomplete', 'off');
+            $form->setAttribute('novalidate', 'novalidate');
+            echo $this->form()->openTag($form); 
+            echo !empty($this->error) ? '<p class="error">'.$this->error.'</p>' : '' ;
+            ?>
+            <fieldset class="form-group position-relative has-icon-left">
+              <?php echo $this->formInput($form->get('username')) ?>
+              <div class="form-control-position">
+                <i class="la la-user"></i>
+              </div>
+            </fieldset>
+            <fieldset class="form-group position-relative has-icon-left">
+              <?php echo $this->formInput($form->get('password')) ?>
+              <div class="form-control-position">
+                <i class="la la-key"></i>
+              </div>
+            </fieldset>
+            <input type="hidden" name="csrf_token" value="<?php echo $this->escapeHtml($this->csrf_token); ?>" />
+            <?php if ($this->redirect): ?>
+			  <input type="hidden" name="redirect" value="<?php echo $this->escapeHtml($this->redirect); ?>" />
+			<?php endif ?>
+			<!--  div class="g-recaptcha" data-sitekey="<?php echo $this->recaptcha_key; ?>"></div-->
+            <div class="form-group row">
+                <div class="col-sm-6 col-12 text-center text-sm-left pr-0">
+                  <fieldset>
+                    <input type="checkbox" id="remember-me" class="chk-remember">
+                    <label for="remember-me"> Remember Me</label>
+                  </fieldset>
+                </div>
+                <div class="col-sm-6 col-12 float-sm-left text-center text-sm-right"><a href="recover-password.html"
+                    class="card-link">Forgot Password?</a></div>
+              </div>
+              <?php echo $this->formButton($form->get('submit')) ?>
+            <?php echo $this->form()->closeTag() ?>            
+          </div>
+          <p class="card-subtitle line-on-side text-muted text-center font-small-3 mx-2 my-1"><span>New to MarketPlace?</span></p>
+          <div class="card-body">
+            <a href="register-with-bg-image.html" class="btn btn-outline-danger btn-block"><i class="la la-user"></i> Register</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<?= $this->inlineScript()->appendFile($this->serverUrl('/assets/js/scripts/forms/form-login-register.min.js')); ?>
