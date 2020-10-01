@@ -6,9 +6,9 @@ use Laminas\Db\Adapter\Adapter;
 use Laminas\Db\Sql\Select;
 use Cart\Entity\CartRow;
 
-class Cart extends AbstractTableGateway
+class CartContent extends AbstractTableGateway
 {
-    protected $table = 'cart';
+    protected $table = 'cart_content';
     
     public function __construct(Adapter $adapter)
     {

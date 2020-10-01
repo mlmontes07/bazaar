@@ -11,6 +11,7 @@ use Application\Library\Session;
 use Application\View\Helper\ControllerName;
 use User\Controller\SigninController;
 use User\Controller\SignoutController;
+use Laminas\Filter\FilterChain;
 
 class Module
 {
@@ -98,19 +99,17 @@ class Module
         }, 110);
         
         $eventManager->attach(MvcEvent::EVENT_RENDER, function ($e) use ($sm, $auth, $session) {
-            # $renderer = $sm->get('ViewRenderer');
-            
+            $renderer = $sm->get('ViewRenderer');            
             # uncomment this to minify HTML and JS,CSS on returning views
-            # $renderer->setFilterChain((new FilterChain())->attach(new MinifyFilter()));
-            
+            # $renderer->setFilterChain((new FilterChain())->attach(new MinifyHelper()));
             $viewModel = $e->getViewModel();
             $userData = ($auth->hasIdentity() ? $auth->getIdentity() : null);
             $viewModel->setVariables([
-                'userData' => $userData,
-                'accessList' => $session->getAclList(),
+                'user_data' => $userData,
+                'access_list' => $session->getAclList(),
                 'ip_address' => $session->findIP(),
-                'moduleAccess' => $session->getSessionItem('module_access', []),
-                'loggedIn' => $auth->hasIdentity()
+                'module_access' => $session->getSessionItem('module_access', []),
+                'logged_in' => $auth->hasIdentity()
             ]);
         });
     }

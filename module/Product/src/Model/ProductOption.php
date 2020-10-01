@@ -4,7 +4,7 @@ namespace Product\Model;
 use Laminas\Db\TableGateway\AbstractTableGateway;
 use Laminas\Db\Adapter\Adapter;
 use Laminas\Db\Sql\Select;
-use Payment\Entity\ProductOptionRow;
+use Product\Entity\ProductOptionRow;
 
 class ProductOption extends AbstractTableGateway
 {

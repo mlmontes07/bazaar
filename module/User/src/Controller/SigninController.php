@@ -74,14 +74,14 @@ class SigninController extends AbstractActionController
 
                 # check csrf validity
                 $sessionCsrfToken = $this->session->getCSRFToken();
-                if ($dataform['csrf_token'] !== $sessionCsrfToken) {
+                if (!hash_equals($sessionCsrfToken, $dataform['token'])) {
                     $this->logger->info('Tried to login with a different CSRF Token', [
                         'ipAddress' => $this->session->findIP(),
                         'username' => $dataform['username'],
                         'password' => $dataform['password'],
                         'token' => $sessionCsrfToken
                     ]);
-                    $viewModel->setVariable('error', 'CSRF token mismatch. Try again.');
+                    $viewModel->setVariable('error', 'Token mismatch. Try again.');
                 } else {
                     $adapter = $this->auth->getAdapter();
                     $adapter->setIdentity($dataform['username']);

@@ -1,5 +1,5 @@
 <?php
-namespace Payment\Entity;
+namespace Product\Entity;
 
 use Laminas\Db\RowGateway\AbstractRowGateway;
 use Laminas\Db\Adapter\Adapter;

@@ -1,7 +1,6 @@
 <?php
-namespace User\Entity;
+namespace User\Model;
 
-use User\Model\ModuleResource;
 use Laminas\Db\Adapter\Adapter;
 
 class UserAccess
@@ -169,22 +168,22 @@ class UserAccess
                             case 'view':
                                 if ($object->getView())
                                     $show = true;
-                                $action_id = UserAccess::ACTION_VIEW;
+                                    $action_id = self::ACTION_VIEW;
                                 break;
                             case 'add':
                                 if ($object->getAdd())
                                     $show = true;
-                                $action_id = UserAccess::ACTION_ADD;
+                                    $action_id = self::ACTION_ADD;
                                 break;
                             case 'edit':
                                 if ($object->getEdit())
                                     $show = true;
-                                $action_id = UserAccess::ACTION_EDIT;
+                                    $action_id = self::ACTION_EDIT;
                                 break;
                             case 'delete':
                                 if ($object->getDelete())
                                     $show = true;
-                                $action_id = UserAccess::ACTION_DELETE;
+                                    $action_id = self::ACTION_DELETE;
                                 break;
                         }
                         if ($show) {
@@ -211,22 +210,22 @@ class UserAccess
                                     case 'view':
                                         if ($child->getView())
                                             $show = true;
-                                        $action_id = UserAccess::ACTION_VIEW;
+                                            $action_id = self::ACTION_VIEW;
                                         break;
                                     case 'add':
                                         if ($child->getAdd())
                                             $show = true;
-                                        $action_id = UserAccess::ACTION_ADD;
+                                            $action_id = self::ACTION_ADD;
                                         break;
                                     case 'edit':
                                         if ($child->getEdit())
                                             $show = true;
-                                        $action_id = UserAccess::ACTION_EDIT;
+                                            $action_id = self::ACTION_EDIT;
                                         break;
                                     case 'delete':
                                         if ($child->getDelete())
                                             $show = true;
-                                        $action_id = UserAccess::ACTION_DELETE;
+                                            $action_id = self::ACTION_DELETE;
                                         break;
                                 }
 

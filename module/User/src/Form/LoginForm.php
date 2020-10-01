@@ -48,7 +48,7 @@ class LoginForm extends Form
         ]);
 
         $this->add([
-            'name' => 'csrf_token',
+            'name' => 'token',
             'type' => 'hidden',
             'attributes' => [
                 'id' => 'token'
@@ -105,7 +105,7 @@ class LoginForm extends Form
         $inputFilter->add($password);
 
         // csrf_token
-        $token = new InputFilter\Input('csrf_token');
+        $token = new InputFilter\Input('token');
         $token->setRequired(true);
         $inputFilter->add($token);
 
