@@ -20,7 +20,7 @@ class OrderRow extends AbstractRowGateway
     protected $market_id;
     protected $applied_tax;
     protected $commission;
-    protected $merchant_earning;
+    protected $market_earning;
     protected $updated_by;
     protected $deleted;
     protected $adapter = null;
@@ -211,15 +211,15 @@ class OrderRow extends AbstractRowGateway
         return $this->data['commission'];
     }
     
-    public function setMerchantEarning($merchant_earning)
+    public function setMarketEarning($market_earning)
     {
-        $this->data['merchant_earning'] = $merchant_earning;
+        $this->data['market_earning'] = $market_earning;
         return $this;
     }
     
-    public function getMerchantEarning()
+    public function getMarketEarning()
     {
-        return $this->data['merchant_earning'];
+        return $this->data['market_earning'];
     }
     
     public function setUpdatedBy($updated_by)

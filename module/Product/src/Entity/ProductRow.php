@@ -8,7 +8,7 @@ use Laminas\Db\Sql\Sql;
 class ProductRow extends AbstractRowGateway
 {
     protected $id;
-    protected $merchant_id;
+    protected $market_id;
     protected $name;
     protected $price;
     protected $discount_price;
@@ -77,15 +77,15 @@ class ProductRow extends AbstractRowGateway
         return $this->data['id'];
     }
     
-    public function setMerchantId($merchant_id)
+    public function setMarketId($market_id)
     {
-        $this->data['merchant_id'] = $merchant_id;
+        $this->data['market_id'] = $market_id;
         return $this;
     }
     
-    public function getMerchantId()
+    public function getMarketId()
     {
-        return $this->data['merchant_id'];
+        return $this->data['market_id'];
     }
     
     public function setName($name)

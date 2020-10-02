@@ -41,7 +41,7 @@ class Module
         
         $view = $sm->get('ViewRenderer');
         $pluginManager = $view->getHelperPluginManager();
-        $pluginManager->setAlias('controllerName', ControllerName::class);
+        $pluginManager->setAlias('controllerActionName', ControllerName::class);
         
         # Register a factory
         $pluginManager->setFactory(ControllerName::class, function () use ($e) {

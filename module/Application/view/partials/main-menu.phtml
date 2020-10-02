@@ -3,18 +3,17 @@
  * @var Laminas\View\Renderer\PhpRenderer $this
  */
 ?>
-<!-- BEGIN: Main Menu-->
 <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
   <div class="main-menu-content">
     <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-      <li class="active">
+      <li class="<?= ($this->controllerActionName() == 'home/index' ? 'active' : ''); ?>">
         <a href="<?= $this->serverUrl() ?>">
           <i class="la la-home"></i>
           <span class="menu-title" data-i18n="Dashboard">Dashboard</span>
         </a>
       </li>
       <li class="navigation-header">
-        <span data-i18n="Ecommerce">Ecommerce</span>
+        <span data-i18n="Ecommerce">Market Management</span>
         <i class="la la-ellipsis-h" data-toggle="tooltip" data-placement="right" data-original-title="Ecommerce"></i>
       </li>
       <li class="nav-item">
@@ -23,17 +22,14 @@
           <span class="menu-title" data-i18n="Invoice">Markets</span>
         </a>
         <ul class="menu-content">
-          <li>
-            <a class="menu-item" href="<?= $this->serverUrl('/merchant') ?>"><i></i><span data-i18n="Markets">Markets</span></a>
+          <li class="<?= ($this->controllerActionName() == 'market/index' ? 'active' : ''); ?>">
+            <a class="menu-item" href="<?= $this->serverUrl('/market') ?>"><i></i><span data-i18n="Markets">Markets</span></a>
           </li>
-          <li>
-            <a class="menu-item" href="<?= $this->serverUrl('/merchant-reviews') ?>"><i></i><span data-i18n="Market Reviews">Market Reviews</span></a>
+          <li class="<?= ($this->controllerActionName() == 'market-review/index' ? 'active' : ''); ?>">
+            <a class="menu-item" href="<?= $this->serverUrl('/market-review') ?>"><i></i><span data-i18n="Market Reviews">Market Reviews</span></a>
           </li>
-          <li>
-            <a class="menu-item" href="<?= $this->serverUrl('/merchant-gallery') ?>"><i></i><span data-i18n="Market Galleries">Market Galleries</span></a>
-          </li>
-          <li>
-            <a class="menu-item" href="<?= $this->serverUrl('/merchant-category') ?>"><i></i><span data-i18n="Market Categories">Market Categories</span></a>
+          <li class="<?= ($this->controllerActionName() == 'market-category/index' ? 'active' : ''); ?>">
+            <a class="menu-item" href="<?= $this->serverUrl('/market-category') ?>"><i></i><span data-i18n="Market Categories">Market Categories</span></a>
           </li>
         </ul>
       </li>
@@ -43,20 +39,20 @@
           <span class="menu-title" data-i18n="Invoice">Products</span>
         </a>
         <ul class="menu-content">
-          <li>
-            <a class="menu-item" href="invoice-summary.html"><i></i><span data-i18n="Invoice Summary">Products</span></a>
+          <li class="<?= ($this->controllerActionName() == 'product/index' ? 'active' : ''); ?>">
+            <a class="menu-item" href="<?= $this->serverUrl('/product') ?>"><i></i><span data-i18n="Products">Products</span></a>
           </li>
-          <li>
-            <a class="menu-item" href="invoice-summary.html"><i></i><span data-i18n="Invoice Summary">Product Options</span></a>
+          <li class="<?= ($this->controllerActionName() == 'product-option/index' ? 'active' : ''); ?>">
+            <a class="menu-item" href="<?= $this->serverUrl('/product-option') ?>"><i></i><span data-i18n="Product Options">Product Options</span></a>
           </li>
-          <li>
-            <a class="menu-item" href="invoice-summary.html"><i></i><span data-i18n="Invoice Summary">Product Option Groups</span></a>
+          <li class="<?= ($this->controllerActionName() == 'product-option-group/index' ? 'active' : ''); ?>">
+            <a class="menu-item" href="<?= $this->serverUrl('/product-option-group') ?>"><i></i><span data-i18n="Product Option Groups">Product Option Groups</span></a>
           </li>
-          <li>
-            <a class="menu-item" href="invoice-template.html"><i></i><span data-i18n="Invoice Template">Product Reviews</span></a>
+          <li class="<?= ($this->controllerActionName() == 'product-review/index' ? 'active' : ''); ?>">
+            <a class="menu-item" href="<?= $this->serverUrl('/product-review') ?>"><i></i><span data-i18n="Product Reviews">Product Reviews</span></a>
           </li>
-          <li>
-            <a class="menu-item" href="invoice-template.html"><i></i><span data-i18n="Invoice Template">Product Categories</span></a>
+          <li class="<?= ($this->controllerActionName() == 'product-category/index' ? 'active' : ''); ?>">
+            <a class="menu-item" href="<?= $this->serverUrl('/product-category') ?>"><i></i><span data-i18n="Product Categories">Product Categories</span></a>
           </li>
         </ul>
       </li>
@@ -66,23 +62,23 @@
           <span class="menu-title" data-i18n="Invoice">Orders</span>
         </a>
         <ul class="menu-content">
-          <li>
-            <a class="menu-item" href="invoice-summary.html"><i></i><span data-i18n="Invoice Summary">Orders</span></a>
+          <li class="<?= ($this->controllerActionName() == 'order/index' ? 'active' : ''); ?>">
+            <a class="menu-item" href="<?= $this->serverUrl('/order') ?>"><i></i><span data-i18n="Orders">Orders</span></a>
           </li>
-          <li>
-            <a class="menu-item" href="invoice-summary.html"><i></i><span data-i18n="Invoice Summary">Order Statuses</span></a>
+          <li class="<?= ($this->controllerActionName() == 'order-status/index' ? 'active' : ''); ?>">
+            <a class="menu-item" href="<?= $this->serverUrl('/order-status') ?>"><i></i><span data-i18n="Order Statuses">Order Statuses</span></a>
           </li>
-          <li>
-            <a class="menu-item" href="invoice-summary.html"><i></i><span data-i18n="Invoice Summary">Order Payments</span></a>
+          <li class="<?= ($this->controllerActionName() == 'order-payment/index' ? 'active' : ''); ?>">
+            <a class="menu-item" href="<?= $this->serverUrl('/order-payment') ?>"><i></i><span data-i18n="Order Payments">Order Payments</span></a>
           </li>
-          <li>
-            <a class="menu-item" href="invoice-template.html"><i></i><span data-i18n="Invoice Template">Deliveries</span></a>
+          <li class="<?= ($this->controllerActionName() == 'delivery/index' ? 'active' : ''); ?>">
+            <a class="menu-item" href="<?= $this->serverUrl('/delivery') ?>"><i></i><span data-i18n="Deliveries">Deliveries</span></a>
           </li>
         </ul>
       </li>
       
       <li class="navigation-header">
-        <span data-i18n="Settings">Settings</span>
+        <span data-i18n="Settings">Setting</span>
         <i class="la la-ellipsis-h" data-toggle="tooltip" data-placement="right" data-original-title="Settings"></i>
       </li>      
       <li class="nav-item">
@@ -92,10 +88,10 @@
         </a>
         <ul class="menu-content">
           <li>
-            <a class="menu-item" href="invoice-summary.html"><i></i><span data-i18n="Invoice Summary">Global Settings</span></a>
+            <a class="menu-item" href="<?= $this->serverUrl('/global-setting') ?>"><i></i><span data-i18n="Invoice Summary">Global Settings</span></a>
           </li>
           <li>
-            <a class="menu-item" href="invoice-summary.html"><i></i><span data-i18n="Invoice Summary">Theme</span></a>
+            <a class="menu-item" href="<?= $this->serverUrl('/theme-setting') ?>"><i></i><span data-i18n="Invoice Summary">Theme</span></a>
           </li>
         </ul>
       </li>      
@@ -228,4 +224,3 @@
     </ul>
   </div>
 </div>
-<!-- END: Main Menu-->

@@ -45,7 +45,7 @@ return [
     'AppLogger',
     'Cart',
     'Document',
-    'Merchant',
+    'Market',
     'Order',
     'Payment',
     'Product',

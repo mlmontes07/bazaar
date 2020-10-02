@@ -106,15 +106,15 @@ class MediaRow extends AbstractRowGateway
         return $this->data['information'];
     }
     
-    public function setMerchantType($merchant_type)
+    public function setMarketType($market_type)
     {
-        $this->data['merchant_type'] = $merchant_type;
+        $this->data['market_type'] = $market_type;
         return $this;
     }
     
-    public function getMerchantType()
+    public function getMarketType()
     {
-        return $this->data['merchant_type'];
+        return $this->data['market_type'];
     }
     
     public function setAddress($address)
@@ -293,26 +293,26 @@ class MediaRow extends AbstractRowGateway
         return $this->data['delivery_range'];
     }
     
-    public function setMerchantCategoryId($merchant_category_id)
+    public function setMarketCategoryId($market_category_id)
     {
-        $this->data['merchant_category_id'] = $merchant_category_id;
+        $this->data['market_category_id'] = $market_category_id;
         return $this;
     }
     
-    public function getMerchantCategoryId()
+    public function getMarketCategoryId()
     {
-        return $this->data['merchant_category_id'];
+        return $this->data['market_category_id'];
     }
     
-    public function setMerchantAccountId($merchant_account_id)
+    public function setMarketAccountId($market_account_id)
     {
-        $this->data['merchant_account_id'] = $merchant_account_id;
+        $this->data['market_account_id'] = $market_account_id;
         return $this;
     }
     
-    public function getMerchantAccountId()
+    public function getMarketAccountId()
     {
-        return $this->data['merchant_account_id'];
+        return $this->data['market_account_id'];
     }
     
     public function setUserId($user_id)

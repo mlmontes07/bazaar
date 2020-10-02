@@ -33,7 +33,7 @@
 			"AppLogger\\" : "module/AppLogger/src/",
 			"Cart\\" : "module/Cart/src/",
 			"Document\\" : "module/Document/src/",
-			"Merchant\\" : "module/Merchant/src/",
+			"Market\\" : "module/Market/src/",
 			"Order\\" : "module/Order/src/",
 			"Payment\\" : "module/Payment/src/",
 			"Product\\" : "module/Product/src/",
